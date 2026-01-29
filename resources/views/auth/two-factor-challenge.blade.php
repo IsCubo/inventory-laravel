@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <x-bx-store class="size-16 text-gray-600 dark:text-gray-400"/>
         </x-slot>
 
         <div x-data="{ recovery: false }">

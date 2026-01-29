@@ -1,96 +1,140 @@
-<div class="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
-    <x-application-logo class="block h-12 w-auto" />
-
-    <h1 class="mt-8 text-2xl font-medium text-gray-900 dark:text-white">
-        Welcome to your Jetstream application!
-    </h1>
-
-    <p class="mt-6 text-gray-500 dark:text-gray-400 leading-relaxed">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
-    </p>
-</div>
-
-<div class="bg-gray-200 dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8">
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-white">
-                <a href="https://laravel.com/docs">Documentation</a>
-            </h2>
+<div class="bg-gray-100 dark:bg-gray-900 py-2">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">Our Products</h1>
+            <p class="mt-2 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
+                Discover our collection of the finest products.
+            </p>
         </div>
 
-        <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Laravel has wonderful documentation covering every aspect of the framework. Whether you're new to the framework or have previous experience, we recommend reading all of the documentation from beginning to end.
-        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Product Card 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/JzmP3VV5x8ufElIAwRg6GUR20HsEaeMJo0GwFza5gEg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXBwbGUuY29tL3Yv/d2F0Y2gvYnQvaW1h/Z2VzL292ZXJ2aWV3/L2NvbnNpZGVyX21v/ZGFscy9mYW1pbHkt/c2V0dXAvbW9kYWxf/ZmFtaWx5X3NldHVw/X3BhaXJfd2F0Y2hf/X2ZuYTBwY2o5c2xx/cV9sYXJnZS5qcGc" alt="Product 1">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product One</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product one. It's a great product.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$29.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        <p class="mt-4 text-sm">
-            <a href="https://laravel.com/docs" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
-                Explore the documentation
+            <!-- Product Card 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/QEh3pNESlkSDtmBs7LxImd1IkaB58JyCczsWZYPDFNg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFyaHpGV2JxeEwu/anBn" alt="Product 2">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Two</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product two. It's also a great product.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$19.99</span>
+                        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 size-5 fill-indigo-500 dark:fill-indigo-200">
-                    <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </p>
-    </div>
+            <!-- Product Card 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/tof5xIpbYSqti9CSmp4P-jrEKI3LattM-ZLNyWLfSGA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxcGdjNXkyMTlM/LmpwZw" alt="Product 3">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Three</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product three. You will love it.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$41.99</span>
+                        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-gray-400">
-                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-white">
-                <a href="https://laracasts.com">Laracasts</a>
-            </h2>
+            <!-- Product Card 4 -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/S0uDDmb5Rilt2opxQzFNN76PYeieja2JMllxZ9FPhV0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/Nzk1ODYzMzcyNzgt/M2JlZmQ0MGZkMTdh/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZhdXRv/PWZvcm1hdCZmaXQ9/Y3JvcCZpeGxpYj1y/Yi00LjEuMCZpeGlk/PU0zd3hNakEzZkRC/OE1IeHpaV0Z5WTJo/OE1ueDhjMjFoY25R/bE1qQjNZWFJqYUh4/bGJud3dmSHd3Zkh4/OE1BPT0" alt="Product 4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Four</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product four. A must-have item.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$24.99</span>
+                        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/5rzOLzq-kz0K_YIyVllwblcLsHXVvzg-2q_XFRqStKQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9zbWFydHdhdGNo/LXNjcmVlbi1kaWdp/dGFsLWRldmljZV8x/MDM2NjkzLTM5MDk2/LmpwZz9zZW10PWFp/c19pbmNvbWluZyZ3/PTc0MCZxPTgw">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Five</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product four. A must-have item.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$25.99</span>
+                        <button class="bg-blue-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/d3LD_K4Y_EsaY_ZB445x6qe8PQcEDgNiIiqleJ0glk4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dG1vYmlsZS5jb20v/Y29udGVudC9kYW0v/dC1tb2JpbGUvZW4t/cC9pbnRlcm5ldC1k/ZXZpY2VzL1QtTW9i/aWxlL1QtTW9iaWxl/LVN5bmNVUC1LSURT/LVdhdGNoLTIvQmxh/Y2svVC1Nb2JpbGUt/U3luY1VQLUtJRFMt/V2F0Y2gtMi1CbGFj/ay10aHVtYm5haWwu/cG5n" alt="Product 4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Six</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product four. A must-have item.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$42.99</span>
+                        <button class="bg-green-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/txZGZyl5-9c00ravowtHW_r8tpA081F-K7wYDUGjyLo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbGF0/Zm9ybS50aGV2ZXJn/ZS5jb20vd3AtY29u/dGVudC91cGxvYWRz/L3NpdGVzLzIvMjAy/NS8wMS9EU0MwOTM5/OV9wcm9jZXNzZWQu/anBnP3F1YWxpdHk9/OTAmc3RyaXA9YWxs/JmNyb3A9MC4wMTI1/MDAwMDAwMDAwMDMs/MCw5OS45NzUsMTAw/Jnc9MjQwMA" alt="Product 4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Seven</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product four. A must-have item.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$279.99</span>
+                        <button class="bg-yellow-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="h-56 w-full object-cover" src="https://imgs.search.brave.com/DuuaSr2qntySf1Y0MssUcY_iR7UsOSFZCSfnRzfoPT0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFWbWUwNTVDbkwu/anBn" alt="Product 4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Product Eight</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-base mb-4">
+                        This is a short description for product four. A must-have item.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">$385.99</span>
+                        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-        </p>
-
-        <p class="mt-4 text-sm">
-            <a href="https://laracasts.com" class="inline-flex items-center font-semibold text-indigo-700 dark:text-indigo-300">
-                Start watching Laracasts
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="ms-1 size-5 fill-indigo-500 dark:fill-indigo-200">
-                    <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </p>
-    </div>
-
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-white">
-                <a href="https://tailwindcss.com/">Tailwind</a>
-            </h2>
-        </div>
-
-        <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Laravel Jetstream is built with Tailwind, an amazing utility first CSS framework that doesn't get in your way. You'll be amazed how easily you can build and maintain fresh, modern designs with this wonderful framework at your fingertips.
-        </p>
-    </div>
-
-    <div>
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-gray-400">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-            </svg>
-            <h2 class="ms-3 text-xl font-semibold text-gray-900 dark:text-white">
-                Authentication
-            </h2>
-        </div>
-
-        <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-            Authentication and registration views are included with Laravel Jetstream, as well as support for user email verification and resetting forgotten passwords. So, you're free to get started with what matters most: building your application.
-        </p>
     </div>
 </div>

@@ -11,7 +11,11 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::where('user_id', Auth::user()->id)->latest()->paginate(12);
+        if(Auth::user()->id == 12){
+            $products = Product::latest()->paginate(12);
+        } else {
+            $products = Product::where('user_id', Auth::user()->id)->latest()->paginate(12);
+        }
         return view('products.index', compact('products'));
     }
 
