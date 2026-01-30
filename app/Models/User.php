@@ -33,6 +33,14 @@ class User extends Authenticatable
         'password',
     ];
 
+    /** 
+     * The attributes that define the relationship with the role model
+    */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -65,5 +73,19 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    protected static function booted(): void
+    {
+        parent::booted();
+
+        static::created(function (User $user) {
+            $user->roles()->attach(Role::where('name', 'USER')->first());
+        });
+    }
+    
+    public function hasRole($role)
+    {
+        return $this->roles()->where('name', $role)->exists();
     }
 }
