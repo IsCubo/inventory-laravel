@@ -21,9 +21,9 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin123'),
         ]);
-        $adminUser->roles()->attach($adminRole);
         User::factory(9)->create()->each(function ($user) use ($userRole) {
-            $user->roles()->attach($userRole);
+            $user->roles()->sync($userRole->id);
         });
+        $adminUser->roles()->sync($adminRole->id);
     }
 }

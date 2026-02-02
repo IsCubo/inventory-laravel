@@ -80,12 +80,17 @@ class User extends Authenticatable
         parent::booted();
 
         static::created(function (User $user) {
-            $user->roles()->attach(Role::where('name', 'USER')->first());
+            $user->roles()->sync(Role::where('name', 'USER')->first()->id);
         });
     }
     
     public function hasRole($role)
     {
-        return $this->roles()->where('name', $role)->exists();
+        return $this->roles->contains('name', $role);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

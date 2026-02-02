@@ -11,21 +11,15 @@ class ProductController extends Controller
 {
     public function index()
     {
-    //     // Depuración temporal
-    // $user = Auth::user();
-    // $userRoles = $user->roles; // Esto carga todos los roles del usuario
-    // $roleNames = $userRoles->pluck('name'); // Extrae solo los nombres
-    
-    // // Esto te mostrará en pantalla qué roles tiene el usuario
-    // dd($roleNames);
-    
-    // Tu código original
-    if(Auth::user()->hasRole('ADMIN')){
-        $products = Product::latest()->paginate(12);
-    } else {
-        $products = Product::where('user_id', Auth::user()->id)->latest()->paginate(12);
-    }
-    return view('products.index', compact('products'));
+        $user = Auth::user()->load('roles');
+        if ($user->hasRole('ADMIN')) {
+            $products = Product::latest()->paginate(12);
+        } else {
+            $products = Product::where('user_id', $user->id)
+                ->latest()
+                ->paginate(12);
+        }
+        return view('products.index', compact('products'));
     }
 
     public function create()
