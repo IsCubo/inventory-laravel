@@ -16,6 +16,14 @@
 
                     <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
                         <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+                            <div>
+                                @if($product->image)
+                                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="max-width: 300px;">
+                                @else
+                                <p>No hay imagen disponible</p>
+                                @endif
+                            </div>
+
                             <div class="sm:col-span-1">
                                 <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">Nombre</dt>
                                 <dd class="mt-1 text-lg text-gray-900 dark:text-white">{{ $product->name }}</dd>

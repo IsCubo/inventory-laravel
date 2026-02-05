@@ -14,11 +14,25 @@
                     <form action="{{ route('products.update', $product->id) }}" method="POST">
                         @csrf
                         @method('PUT')
+
+                        <div>
+                            <label for="image">Imagen del Producto</label>
+                            @if($product->image)
+                            <p>Imagen actual:</p>
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="max-width: 150px;">
+                            <br><br>
+                            @endif
+                            <input type="file" name="image" id="image" accept="image/*">
+                            <small>Deja en blanco para mantener la imagen actual</small>
+                            @error('image')
+                            <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Nombre</label>
                             <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('name') border-red-500 @enderror" value="{{ old('name', $product->name) }}">
                             @error('name')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -26,7 +40,7 @@
                             <label for="description" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Descripción</label>
                             <textarea id="description" name="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('description') border-red-500 @enderror">{{ old('description', $product->description) }}</textarea>
                             @error('description')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -34,7 +48,7 @@
                             <label for="price" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Precio</label>
                             <input type="number" id="price" name="price" step="0.01" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('price') border-red-500 @enderror" value="{{ old('price', $product->price) }}">
                             @error('price')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 

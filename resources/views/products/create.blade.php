@@ -9,16 +9,16 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
                 {{-- Aquí va el contenido de tu formulario --}}
-                                <div class="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
+                <div class="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
                     <h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Crear Nuevo Producto</h1>
 
-                    <form action="{{ route('products.store') }}" method="POST">
+                    <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Nombre</label>
                             <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('name') border-red-500 @enderror" value="{{ old('name') }}">
                             @error('name')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -26,7 +26,7 @@
                             <label for="description" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Descripción</label>
                             <textarea id="description" name="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('description') border-red-500 @enderror">{{ old('description') }}</textarea>
                             @error('description')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -34,7 +34,16 @@
                             <label for="price" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Precio</label>
                             <input type="number" id="price" name="price" step="0.01" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('price') border-red-500 @enderror" value="{{ old('price') }}">
                             @error('price')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <!-- Campo de imagen -->
+                        <div>
+                            <label for="image">Imagen del Producto</label>
+                            <input type="file" name="image" id="image" accept="image/*">
+                            @error('image')
+                            <span>{{ $message }}</span>
                             @enderror
                         </div>
 

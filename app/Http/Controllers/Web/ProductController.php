@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -29,6 +30,13 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+
+        // Manejar la subida de la imagen
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('products', 'public');
+            $data['image'] = $imagePath;
+        }
+
         $product = Product::create(array_merge(
             $request->validated(),
             ['user_id' => Auth::user()->id]
@@ -48,7 +56,20 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, Product $product)
     {
-        $product->update($request->validated());
+        $data = $request->validated();
+
+        // Manejar la subida de la imagen
+        if ($request->hasFile('image')) {
+            // Eliminar la imagen anterior si existe
+            if ($product->image) {
+                Storage::disk('public')->delete($product->image);
+            }
+
+            $imagePath = $request->file('image')->store('products', 'public');
+            $data['image'] = $imagePath;
+        }
+
+        $product->update($data);
         return redirect()->route('products.show', $product)->with('success', 'Producto actualizado exitosamente.');
     }
 
