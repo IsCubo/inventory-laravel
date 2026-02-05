@@ -31,17 +31,20 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
 
+        $data = $request->validated();
+
         // Manejar la subida de la imagen
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('products', 'public');
             $data['image'] = $imagePath;
         }
 
-        $product = Product::create(array_merge(
-            $request->validated(),
-            ['user_id' => Auth::user()->id]
-        ));
-        return redirect()->route('products.show', $product)->with('success', 'Producto creado exitosamente.');
+        $product = Product::create(array_merge($data, [
+            'user_id' => Auth::user()->id
+        ]));
+
+        return redirect()->route('products.show', $product)
+            ->with('success', 'Producto creado exitosamente.');
     }
 
     public function show(Product $product)
